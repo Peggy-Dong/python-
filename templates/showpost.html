@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}information{% endblock %}
+{% block headmessage %} <h1>Show information</h1> {% endblock %}
+{% block content %}
+
+<a href="/">come bake to index</a><br>
+title:{{target.title}}<br>
+date:{{target.pub_date}}<br>
+content:<br>
+{{target.body}}
+
+{% endblock %}
