@@ -17,3 +17,11 @@ def show(request, id):
 	except:
 		return redirect("/")
 	return render(request, "showpost.html", locals())
+
+def aboutus(request):
+	
+	return render(request, 'aboutus.html', locals())
+
+def detailed(request):
+	posts= Post.objects.all()
+	return render(request, 'detailed.html', locals())

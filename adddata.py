@@ -1,13 +1,17 @@
 import os
 import django
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'datacenter.settings')
+import csv
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'group3.settings')
 django.setup()
 
 
 from mysite.models import Post
 
 
-for i in range(10):
-	newdata = Post(title = "標題{}".format(i),
-		body = "內文{}".format(i))
-	newdata.save()
+with open("recycle1.csv", newline="\n", encoding="utf-8") as csvfile:
+	rows = csv.reader(csvfile, delimiter=",")
+	for row in rows:
+		print(row)
+		newdata = Post(year =str(row[0]),title =str(row[1]),body =str(row))
+		newdata.save()

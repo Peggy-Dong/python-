@@ -17,9 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from mysite.views import index
 from mysite.views import show
+from mysite.views import detailed
+from mysite.views import aboutus
 
 urlpatterns = [
 	path('show<int:id>/', show),
+    path('aboutus/',aboutus),
+    path('detailed/',detailed),
     path('admin/', admin.site.urls),
     path('',index),
 ]
