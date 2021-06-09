@@ -22,15 +22,24 @@ class Post(models.Model):
 #		return self.name
 
 class Type(models.Model):
-	year = models.CharField(max_length=200)
-	area =models.CharField(max_length=200)
-	total = models.PositiveIntegerField(default=0)
-	paper = models.PositiveIntegerField(default=0)
-	metal = models.PositiveIntegerField(default=0)
-	plastic= models.PositiveIntegerField(default=0)
+	年度 = models.CharField(max_length=200)
+	地區 =models.CharField(max_length=200)
+	總計 = models.PositiveIntegerField(default=0)
+	紙類 = models.PositiveIntegerField(default=0)
+	金屬類 = models.PositiveIntegerField(default=0)
+	塑膠橡膠= models.PositiveIntegerField(default=0)
+	玻璃 = models.PositiveIntegerField(default=0)
+	紡織品 = models.PositiveIntegerField(default=0)
+	家用電品 = models.PositiveIntegerField(default=0)
+	電池 = models.PositiveIntegerField(default=0)
+	通訊物品 = models.PositiveIntegerField(default=0)
+	特殊用藥廢容器 = models.PositiveIntegerField(default=0)
+	食用油 = models.PositiveIntegerField(default=0)
+	其他 = models.PositiveIntegerField(default=0)
+
 
 
 	def __str__(self):
-		return self.area
+		return self.年度
 
 
