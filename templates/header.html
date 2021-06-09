@@ -1,14 +1,9 @@
-<div class="container">
-    <div class="collapse" id="navbarToggleExternalContent">
-      <div class="" style="background-color: #95CACA;">
-
-
     <ul class="nav justify-content-center" style="background-color: #95CACA;">
-      <li class="nav-item">
+      <li class="nav-itemcol-md-2 offset-md-4">
       <a class="nav-link active" aria-current="page" href="#"><h5>說明</h5></a>
       </li>
       <li class="nav-item">
-     <a class="nav-link" href="#"><h5>分類</h5></a>
+      <a class="nav-link" href="/rank/"><h5>分類</h5></a>
       </li>
      <li class="nav-item">
 
@@ -16,31 +11,40 @@
       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
       <a class="nav-link" href="#"><h5>地區</h5></a>
        <ul class="dropdown-menu">
-
+        <ul class="list-group list-group-horizontal">
+        <li><a class="dropdown-item" href="#">宜蘭縣</a></li>
         <li><a class="dropdown-item" href="#">基隆市</a></li>
         <li><a class="dropdown-item" href="#">台北市</a></li>
         <li><a class="dropdown-item" href="#">新北市</a></li>
         <li><a class="dropdown-item" href="#">桃園縣</a></li>
         <li><a class="dropdown-item" href="#">新竹市</a></li>
         <li><a class="dropdown-item" href="#">新竹縣</a></li>
+        </ul>
+        <ul class="list-group list-group-horizontal">
         <li><a class="dropdown-item" href="#">苗栗縣</a></li>
         <li><a class="dropdown-item" href="#">台中市</a></li>
         <li><a class="dropdown-item" href="#">彰化縣</a></li>
         <li><a class="dropdown-item" href="#">南投縣</a></li>
         <li><a class="dropdown-item" href="#">雲林縣</a></li>
+        </ul>
+        <ul class="list-group list-group-horizontal">
         <li><a class="dropdown-item" href="#">嘉義市</a></li>
         <li><a class="dropdown-item" href="#">嘉義縣</a></li>
         <li><a class="dropdown-item" href="#">台南市</a></li>
         <li><a class="dropdown-item" href="#">高雄市</a></li>
         <li><a class="dropdown-item" href="#">屏東市</a></li>
+        </ul>
+        <ul class="list-group list-group-horizontal">
         <li><a class="dropdown-item" href="#">台東縣</a></li>
         <li><a class="dropdown-item" href="#">花蓮縣</a></li>
-        <li><a class="dropdown-item" href="#">宜蘭縣</a></li>
+        </ul>
+        
         <li><hr class="dropdown-divider"></li>
+        <ul class="list-group list-group-horizontal">
         <li><a class="dropdown-item" href="#">澎湖縣</a></li>
         <li><a class="dropdown-item" href="#">金門縣</a></li>
         <li><a class="dropdown-item" href="#">連江縣</a></li>
-        
+        </ul>
       </ul>
       </li>
 
@@ -55,11 +59,37 @@
         <li><a class="dropdown-item" href="#">Separated link</a></li>
 
       </ul>
+
        </li>
 
-    </ul>
+        {% if request.user.is_authenticated %}
+
+        <li class="nav-itemcol-md-3 offset-md-1">
+           <a class="nav-link " href="/logout/" tabindex="-1" >登出</a>
+        </li>
+        {% else %}
+        </li>
+        <li class="nav-itemcol-md-3 offset-md-1"><a class="nav-link " href="/admin/" tabindex="-1" >登入</a>
+        </li>
+        {% endif %}
+
+      <li>
+        <form class="d-flex" >
+
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </li>
+
+
+
+<div class="container">
+    <div class="collapse" id="navbarToggleExternalContent">
+      <div class="" style="background-color: #95CACA;">
+
+
+
   
-  <h5 class="text-white h4">What are you looking for?</h5>
+  <h5 class="text-white h3">What are you looking for?</h5>
 
 
 
@@ -88,13 +118,13 @@
       <span class="navbar-toggler-icon"></span>
       </button>
 
-      <form class="d-flex" >
-
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      
       </form>
     </div>
 
   </nav>
 
 </div>
+    </ul>
+
+

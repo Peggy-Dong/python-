@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}information{% endblock %}
+{% block headmessage %} <h1>Show information</h1> {% endblock %}
+{% block content %}
+
+<table class='table table-striped table-bordered'>
+	<a href="/">come bake to index</a><br>
+	<tr><td>year</td><td>area</td><td>total</td><td>paper</td></tr>
+{% for type in types %} 
+	<tr>
+		<td>{{ type.year }}</td>
+		<td>{{ type.area }}</td>
+		<td>{{ type.total }}</td>
+		<td>{{ type.paper }}</td>
+		<td>{{ type.metal }}</td>
+		<td>{{ type.plastic }}</td>		
+	</tr>
+{% endfor %}
+</table>
+{% endblock %}

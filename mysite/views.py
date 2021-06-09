@@ -1,7 +1,8 @@
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.http import HttpResponse
-from mysite.models import Post
+from django.contrib import auth
+from mysite.models import Post,Type
 
 
 
@@ -18,6 +19,10 @@ def show(request, id):
 		return redirect("/")
 	return render(request, "showpost.html", locals())
 
+def logout(request):
+	auth.logout(request)
+	return redirect("/")
+
 def aboutus(request):
 	
 	return render(request, 'aboutus.html', locals())
@@ -25,3 +30,7 @@ def aboutus(request):
 def detailed(request):
 	posts= Post.objects.all()
 	return render(request, 'detailed.html', locals())
+
+def rank(request):
+	types=Type.objects.all()
+	return render(request, "rank.html", locals())
