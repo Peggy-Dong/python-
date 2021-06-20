@@ -12,7 +12,7 @@ var myChart = new Chart(ctx, {
 
     data: {
         labels: [
-        {% for type in types %}
+        {% for type in types100 %}
          '{{ type.地區}}',
         {% endfor %}
         ],
@@ -20,7 +20,7 @@ var myChart = new Chart(ctx, {
             label:
              '各地區回收量',
             data: [
-            {% for type in types %}
+            {% for type in types100 %}
              '{{ type.總計}}',
             {% endfor %}
             ],
