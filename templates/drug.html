@@ -20,6 +20,21 @@
 		
 	</tr>
 
+	{% for drug in drugs %} 
+	<tr>
+		<td>{{ drug.地區 }}</td>
+		<td>{{ drug.民國100年 }}</td>
+		<td>{{ drug.民國101年 }}</td>
+		<td>{{ drug.民國102年 }}</td>
+		<td>{{ drug.民國103年 }}</td>
+		<td>{{ drug.民國104年 }}</td>
+		<td>{{ drug.民國105年 }}</td>
+		<td>{{ drug.民國106年 }}</td>
+		<td>{{ drug.民國107年 }}</td>
+		<td>{{ drug.民國108年 }}</td>
+		<td>{{ drug.民國109年 }}</td>
+	</tr>
+	{% endfor %}
 </table>
 
 

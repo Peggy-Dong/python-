@@ -15,12 +15,6 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-#class Year(models.Model):
-#	year = models.CharField(max_length=200)
-#	area =models.CharField(max_length=200)
-#	def __str__(self):
-#		return self.name
-
 class Type(models.Model):
 	年度 = models.CharField(max_length=200)
 	地區 =models.CharField(max_length=200)
@@ -54,8 +48,7 @@ class Paper(models.Model):
 	def __str__(self):
 		return self.地區
 
-
-class metal(models.Model):
+class Paper1(models.Model):
 	地區 = models.CharField(max_length=200)
 	民國100年 = models.PositiveIntegerField(default=0)
 	民國101年 = models.PositiveIntegerField(default=0)
@@ -70,7 +63,7 @@ class metal(models.Model):
 	def __str__(self):
 		return self.地區
 
-class plastic(models.Model):
+class Plastic(models.Model):
 	地區 = models.CharField(max_length=200)
 	民國100年 = models.PositiveIntegerField(default=0)
 	民國101年 = models.PositiveIntegerField(default=0)
@@ -85,35 +78,7 @@ class plastic(models.Model):
 	def __str__(self):
 		return self.地區
 
-class glass(models.Model):
-	地區 = models.CharField(max_length=200)
-	民國100年 = models.PositiveIntegerField(default=0)
-	民國101年 = models.PositiveIntegerField(default=0)
-	民國102年 = models.PositiveIntegerField(default=0)
-	民國103年 = models.PositiveIntegerField(default=0)
-	民國104年 = models.PositiveIntegerField(default=0)
-	民國105年 = models.PositiveIntegerField(default=0)
-	民國106年 = models.PositiveIntegerField(default=0)
-	民國107年 = models.PositiveIntegerField(default=0)
-	民國108年 = models.PositiveIntegerField(default=0)
-	民國109年 = models.PositiveIntegerField(default=0)
-	def __str__(self):
-		return self.地區
-class textile(models.Model):
-	地區 = models.CharField(max_length=200)
-	民國100年 = models.PositiveIntegerField(default=0)
-	民國101年 = models.PositiveIntegerField(default=0)
-	民國102年 = models.PositiveIntegerField(default=0)
-	民國103年 = models.PositiveIntegerField(default=0)
-	民國104年 = models.PositiveIntegerField(default=0)
-	民國105年 = models.PositiveIntegerField(default=0)
-	民國106年 = models.PositiveIntegerField(default=0)
-	民國107年 = models.PositiveIntegerField(default=0)
-	民國108年 = models.PositiveIntegerField(default=0)
-	民國109年 = models.PositiveIntegerField(default=0)
-	def __str__(self):
-		return self.地區
-class EA(models.Model):
+class Glass(models.Model):
 	地區 = models.CharField(max_length=200)
 	民國100年 = models.PositiveIntegerField(default=0)
 	民國101年 = models.PositiveIntegerField(default=0)
@@ -128,7 +93,7 @@ class EA(models.Model):
 	def __str__(self):
 		return self.地區
 
-class battery(models.Model):
+class Textile(models.Model):
 	地區 = models.CharField(max_length=200)
 	民國100年 = models.PositiveIntegerField(default=0)
 	民國101年 = models.PositiveIntegerField(default=0)
@@ -143,7 +108,8 @@ class battery(models.Model):
 	def __str__(self):
 		return self.地區
 
-class CS(models.Model):
+
+class Ea(models.Model):
 	地區 = models.CharField(max_length=200)
 	民國100年 = models.PositiveIntegerField(default=0)
 	民國101年 = models.PositiveIntegerField(default=0)
@@ -158,7 +124,7 @@ class CS(models.Model):
 	def __str__(self):
 		return self.地區
 
-class drug(models.Model):
+class Battery(models.Model):
 	地區 = models.CharField(max_length=200)
 	民國100年 = models.PositiveIntegerField(default=0)
 	民國101年 = models.PositiveIntegerField(default=0)
@@ -173,7 +139,7 @@ class drug(models.Model):
 	def __str__(self):
 		return self.地區
 
-class oil(models.Model):
+class Cs(models.Model):
 	地區 = models.CharField(max_length=200)
 	民國100年 = models.PositiveIntegerField(default=0)
 	民國101年 = models.PositiveIntegerField(default=0)
@@ -188,7 +154,37 @@ class oil(models.Model):
 	def __str__(self):
 		return self.地區
 
-class other(models.Model):
+class Drug(models.Model):
+	地區 = models.CharField(max_length=200)
+	民國100年 = models.PositiveIntegerField(default=0)
+	民國101年 = models.PositiveIntegerField(default=0)
+	民國102年 = models.PositiveIntegerField(default=0)
+	民國103年 = models.PositiveIntegerField(default=0)
+	民國104年 = models.PositiveIntegerField(default=0)
+	民國105年 = models.PositiveIntegerField(default=0)
+	民國106年 = models.PositiveIntegerField(default=0)
+	民國107年 = models.PositiveIntegerField(default=0)
+	民國108年 = models.PositiveIntegerField(default=0)
+	民國109年 = models.PositiveIntegerField(default=0)
+	def __str__(self):
+		return self.地區
+
+class Oil(models.Model):
+	地區 = models.CharField(max_length=200)
+	民國100年 = models.PositiveIntegerField(default=0)
+	民國101年 = models.PositiveIntegerField(default=0)
+	民國102年 = models.PositiveIntegerField(default=0)
+	民國103年 = models.PositiveIntegerField(default=0)
+	民國104年 = models.PositiveIntegerField(default=0)
+	民國105年 = models.PositiveIntegerField(default=0)
+	民國106年 = models.PositiveIntegerField(default=0)
+	民國107年 = models.PositiveIntegerField(default=0)
+	民國108年 = models.PositiveIntegerField(default=0)
+	民國109年 = models.PositiveIntegerField(default=0)
+	def __str__(self):
+		return self.地區
+
+class Other(models.Model):
 	地區 = models.CharField(max_length=200)
 	民國100年 = models.PositiveIntegerField(default=0)
 	民國101年 = models.PositiveIntegerField(default=0)

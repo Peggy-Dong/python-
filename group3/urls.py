@@ -19,16 +19,17 @@ from mysite.views import index,logout,rank,paper
 from mysite.views import show
 from mysite.views import detailed
 from mysite.views import aboutus
-from mysite.views import metal
+from mysite.views import paper1
 from mysite.views import plastic
 from mysite.views import glass
 from mysite.views import textile
-from mysite.views import EA
+from mysite.views import ea
 from mysite.views import battery
-from mysite.views import CS
+from mysite.views import cs
 from mysite.views import drug
 from mysite.views import oil
 from mysite.views import other
+
 urlpatterns = [
 	path('show<int:id>/', show),
     path('aboutus/',aboutus),
@@ -36,13 +37,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('rank/',rank),
     path('paper/',paper),
-    path('metal/',metal),
+    path('paper1/',paper1),
     path('plastic/',plastic),
     path('glass/',glass),
     path('textile/',textile),
-    path('EA/',EA),
+    path('ea/',ea),
     path('battery/',battery),
-    path('CS/',CS),
+    path('cs/',cs),
     path('drug/',drug),
     path('oil/',oil),
     path('other/',other),
