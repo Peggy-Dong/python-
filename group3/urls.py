@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from mysite.views import index,logout,rank,paper
+from mysite.views import index,logout,rank,chart
 from mysite.views import show
 from mysite.views import detailed
 from mysite.views import aboutus
-from mysite.views import paper1
+from mysite.views import metal
 from mysite.views import plastic
 from mysite.views import glass
 from mysite.views import textile
@@ -36,8 +37,9 @@ urlpatterns = [
     path('detailed/',detailed),
     path('admin/', admin.site.urls),
     path('rank/',rank),
+
     path('paper/',paper),
-    path('paper1/',paper1),
+    path('metal/',metal),
     path('plastic/',plastic),
     path('glass/',glass),
     path('textile/',textile),
@@ -47,6 +49,7 @@ urlpatterns = [
     path('drug/',drug),
     path('oil/',oil),
     path('other/',other),
+    path('chart/',chart),
     path('logout/',logout),
     path('',index),
 

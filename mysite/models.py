@@ -48,7 +48,7 @@ class Paper(models.Model):
 	def __str__(self):
 		return self.地區
 
-class Paper1(models.Model):
+class Metal(models.Model):
 	地區 = models.CharField(max_length=200)
 	民國100年 = models.PositiveIntegerField(default=0)
 	民國101年 = models.PositiveIntegerField(default=0)

@@ -4,9 +4,18 @@
 {% block content %}
 
 <a href="/">come bake to index</a><br>
-area:{{target.title}}<br>
-date:{{target.pub_date}}<br>
-content:<br>
-{{target.body}}
-
+<table class='table table-striped table-bordered'>
+	<tr>
+		<td>area</td><td>{{target.title}}</td>
+	</tr>
+	<tr>
+		<td>date</td><td>{{target.pub_date}}</td>
+	</tr>
+	<tr>
+		<td>content</td><td>{{target.body}}</td>
+	</tr>
+</table>
 {% endblock %}
+
+
+

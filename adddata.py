@@ -8,7 +8,7 @@ django.setup()
 
 from mysite.models import Type
 
-with open("recycle1.csv", newline="\n", encoding="utf-8") as csvfile:
+with open("recycle2.csv", newline="\n", encoding="utf-8") as csvfile:
 	rows = csv.reader(csvfile, delimiter=",")
 	for row in rows:
 		print(row)
@@ -25,13 +25,13 @@ with open("paper.csv", newline="\n", encoding="utf-8") as csvfile:
 		newdata = Paper(地區 =str(row[0]),民國100年 =str(row[1]),民國101年 =str(row[2]),民國102年 =str(row[3]),民國103年 =str(row[4]),民國104年 =str(row[5]),民國105年 =str(row[6]),民國106年 =str(row[7]),民國107年 =str(row[8]),民國108年 =str(row[9]),民國109年 =str(row[10]))
 		newdata.save()
 
-from mysite.models import Paper1
+from mysite.models import Metal
 
 with open("m1.csv", newline="\n", encoding="utf-8") as csvfile:
 	rows = csv.reader(csvfile, delimiter=",")
 	for row in rows:
 		print(row)
-		newdata = Paper1(地區 =str(row[0]),民國100年 =str(row[1]),民國101年 =str(row[2]),民國102年 =str(row[3]),民國103年 =str(row[4]),民國104年 =str(row[5]),民國105年 =str(row[6]),民國106年 =str(row[7]),民國107年 =str(row[8]),民國108年 =str(row[9]),民國109年 =str(row[10]))
+		newdata = Metal(地區 =str(row[0]),民國100年 =str(row[1]),民國101年 =str(row[2]),民國102年 =str(row[3]),民國103年 =str(row[4]),民國104年 =str(row[5]),民國105年 =str(row[6]),民國106年 =str(row[7]),民國107年 =str(row[8]),民國108年 =str(row[9]),民國109年 =str(row[10]))
 		newdata.save()
 
 from mysite.models import Plastic

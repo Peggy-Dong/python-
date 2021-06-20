@@ -1,5 +1,5 @@
 from django.contrib import admin
-from mysite.models import Post,Type,Paper,Paper1,Plastic,Glass,Textile,Ea,Battery,Cs,Drug,Oil,Other
+from mysite.models import Post,Type,Paper,Metal,Plastic,Glass,Textile,Ea,Battery,Cs,Drug,Oil,Other
 
 class PostAdmin(admin.ModelAdmin):
 	list_display = ('year','title', 'body', 'pub_date')
@@ -21,10 +21,10 @@ class PaperAdmin(admin.ModelAdmin):
 
 admin.site.register(Paper, PaperAdmin)
 
-class Paper1Admin(admin.ModelAdmin):
+class MetalAdmin(admin.ModelAdmin):
 	list_display = ('地區','民國100年','民國101年','民國102年','民國103年','民國104年','民國105年','民國106年','民國107年','民國108年','民國109年')
 
-admin.site.register(Paper1, Paper1Admin)
+admin.site.register(Metal, MetalAdmin)
 
 class PlasticAdmin(admin.ModelAdmin):
 	list_display = ('地區','民國100年','民國101年','民國102年','民國103年','民國104年','民國105年','民國106年','民國107年','民國108年','民國109年')
