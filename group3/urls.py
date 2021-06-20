@@ -15,17 +15,38 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mysite.views import index,logout,rank
+from mysite.views import index,logout,rank,paper
 from mysite.views import show
 from mysite.views import detailed
 from mysite.views import aboutus
-
+from mysite.views import metal
+from mysite.views import plastic
+from mysite.views import glass
+from mysite.views import textile
+from mysite.views import EA
+from mysite.views import battery
+from mysite.views import CS
+from mysite.views import drug
+from mysite.views import oil
+from mysite.views import other
 urlpatterns = [
 	path('show<int:id>/', show),
     path('aboutus/',aboutus),
     path('detailed/',detailed),
     path('admin/', admin.site.urls),
     path('rank/',rank),
+    path('paper/',paper),
+    path('metal/',metal),
+    path('plastic/',plastic),
+    path('glass/',glass),
+    path('textile/',textile),
+    path('EA/',EA),
+    path('battery/',battery),
+    path('CS/',CS),
+    path('drug/',drug),
+    path('oil/',oil),
+    path('other/',other),
     path('logout/',logout),
     path('',index),
+
 ]
