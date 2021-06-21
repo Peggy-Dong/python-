@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}information{% endblock %}
+{% block headmessage %} <h1>電器用品</h1> {% endblock %}
+{% block content %}
+<a href="/">come bake to index</a><br>
+
+<table class='table table-striped table-bordered'>
+	
+	<tr>
+		<td>     </td>
+		<td>100年</td>
+		<td>101年</td>
+		<td>102年</td>
+		<td>103年</td>
+		<td>104年</td>
+		<td>105年</td>
+		<td>106年</td>
+		<td>107年</td>
+		<td>108年</td>
+		<td>109年</td>
+		
+	</tr>
+
+	{% for ea in eas %} 
+	<tr>
+		<td>{{ ea.地區 }}</td>
+		<td>{{ ea.民國100年 }}</td>
+		<td>{{ ea.民國101年 }}</td>
+		<td>{{ ea.民國102年 }}</td>
+		<td>{{ ea.民國103年 }}</td>
+		<td>{{ ea.民國104年 }}</td>
+		<td>{{ ea.民國105年 }}</td>
+		<td>{{ ea.民國106年 }}</td>
+		<td>{{ ea.民國107年 }}</td>
+		<td>{{ ea.民國108年 }}</td>
+		<td>{{ ea.民國109年 }}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+
+{% endblock %}

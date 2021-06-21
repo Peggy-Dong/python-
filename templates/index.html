@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+
+{% block title %}Recycle Home{% endblock %}
+
+{% block headmessage %} 
+  <div style="text-align:center;"><h1>Wellcom to {{ myname }}</h1> 
+
+  </div>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+<table class='table table-triped'>
+  <td>Year</td><td>Area</td><td>Date</td>
+  {% for post in posts %}
+  <tr>
+    <td>{{ post.year }}</td>
+    <td><a href="/show{{post.id}}/">{{ post.title }}</a></td>
+    <td> {{ post.pub_date}}</td>
+      
+  </tr>
+
+  {% endfor %}
+</table>
+
+</div>
+
+{% endblock %}
+

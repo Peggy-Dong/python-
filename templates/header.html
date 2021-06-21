@@ -1,0 +1,135 @@
+    <ul class="nav justify-content-center" style="background-color: #95CACA;">
+      <li class="nav-itemcol-md-2 offset-md-4">
+      
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="/detailed/"><h5>分類</h5></a>
+      </li>
+     <li class="nav-item">
+
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+      <a class="nav-link" href="#"><h5>地區</h5></a>
+       <ul class="dropdown-menu">
+        <dl class="list-group list-group-horizontal">
+        &nbsp;&nbsp;<h7>北</h7>
+        <li><a class="dropdown-item" href="/yilan/">宜蘭縣</a></li>
+        <li><a class="dropdown-item" href="/keelung/">基隆市</a></li>
+        <li><a class="dropdown-item" href="/taipei/">台北市</a></li>
+        <li><a class="dropdown-item" href="/newtaipei/">新北市</a></li>
+        <li><a class="dropdown-item" href="/taoyuan/">桃園市</a></li>
+        <li><a class="dropdown-item" href="/hsinchu/">新竹市</a></li>
+        <li><a class="dropdown-item" href="/hsinchuc/">新竹縣</a></li>
+        </dl>
+        <dl class="list-group list-group-horizontal">
+        &nbsp;&nbsp;<h7>西</h7>
+        <li><a class="dropdown-item" href="/miaoli/">苗栗縣</a></li>
+        <li><a class="dropdown-item" href="/taichung/">台中市</a></li>
+        <li><a class="dropdown-item" href="/changhua/">彰化縣</a></li>
+        <li><a class="dropdown-item" href="/nantou/">南投縣</a></li>
+        <li><a class="dropdown-item" href="/yunlin/">雲林縣</a></li>
+        </dl>
+        <dl class="list-group list-group-horizontal">
+        &nbsp;&nbsp;<h7>南</h7>
+        <li><a class="dropdown-item" href="/chiayi/">嘉義市</a></li>
+        <li><a class="dropdown-item" href="/chiayic/">嘉義縣</a></li>
+        <li><a class="dropdown-item" href="/tainan/">台南市</a></li>
+        <li><a class="dropdown-item" href="/kaohsiung/">高雄市</a></li>
+        <li><a class="dropdown-item" href="/pingtung/">屏東縣</a></li>
+        </dl>
+        <dl class="list-group list-group-horizontal">
+        &nbsp;&nbsp;<h7>東</h7>
+        <li><a class="dropdown-item" href="/taitung/">台東縣</a></li>
+        <li><a class="dropdown-item" href="/hualien/">花蓮縣</a></li>
+        </dl>
+        
+        <li><hr class="dropdown-divider"></li>
+        &nbsp;&nbsp;<h7>離島</h7>
+        <dl class="list-group list-group-horizontal">
+        <li><a class="dropdown-item" href="/penghu/">澎湖縣</a></li>
+        <li><a class="dropdown-item" href="/kinmen/">金門縣</a></li>
+        <li><a class="dropdown-item" href="/renjiang/">連江縣</a></li>
+        </dl>
+      </ul>
+      </li>
+
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><h5>分析</h5></a>
+      <ul class="dropdown-menu">
+
+        <li><a class="dropdown-item" href="/chart/">圖表資料</a></li>
+        <li><a class="dropdown-item" href="#">統計資料</a></li>
+        <li><a class="dropdown-item" href="#">再利用比例</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Separated link</a></li>
+
+      </ul>
+
+       </li>
+
+        {% if request.user.is_authenticated %}
+
+        <li class="nav-itemcol-md-3 offset-md-1">
+           <a class="nav-link " href="/logout/" tabindex="-1" >登出</a>
+        </li>
+        {% else %}
+        </li>
+        <li class="nav-itemcol-md-3 offset-md-1"><a class="nav-link " href="/admin/" tabindex="-1" >登入</a>
+        </li>
+        {% endif %}
+
+      <li>
+        <form class="d-flex" >
+
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </li>
+
+
+
+<div class="container">
+    <div class="collapse" id="navbarToggleExternalContent">
+      <div class="" style="background-color: #95CACA;">
+
+
+
+  
+  <h5 class="text-white h3">What are you looking for?</h5>
+
+
+
+   <ul class="nav flex-column"style="background-color: #95CACA;" >
+       <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="/rank/">詳細資訊</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="https://data.epa.gov.tw/dataset/stat_p_132">資料來源</a>
+      </li>
+      <li class="nav-item">
+     <a class="nav-link" href="/aboutus/">關於我們</a>
+      </li>
+     <li class="nav-item">
+    <a class="nav-link" href="/admin/" tabindex="-1">manage</a>
+      </li>
+  </ul>
+
+      </div>
+
+    </div>
+
+  <nav class="navbar navbar-dark " style="background-color: #95CACA;">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      </form>
+    </div>
+
+  </nav>
+
+</div>
+    </ul>
+
+

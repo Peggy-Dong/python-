@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% block title %}information{% endblock %}
+{% block headmessage %} <h1>圖表 information</h1> {% endblock %}
+{% block content %} 
+<a href="/">come bake to index</a><br>
+<h1>台灣各地區回收總量</h1>
+<canvas id="myChart" width="50%" height="25%"></canvas>
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+
+    data: {
+        labels: [
+        {% for type in types100 %}
+         '{{ type.地區}}',
+        {% endfor %}
+        ],
+        datasets: [{
+            label:
+             '各地區回收量',
+            data: [
+            {% for type in types100 %}
+             '{{ type.總計}}',
+            {% endfor %}
+            ],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+<div><h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;縣市回收量比例</h1></div>
+<div>
+<canvas id="myChart1" width="500px" height="500px"></canvas>
+<script>
+var ctx = document.getElementById('myChart1').getContext('2d');
+var myChart1 = new Chart(ctx, {
+    type: 'pie',
+
+    data: {
+        labels: [
+        
+         '{{ "紙類" }}',
+         '{{ "金屬類"}}',
+         '{{ "塑膠橡膠" }}',
+         '{{ "玻璃" }}',
+         '{{ "紡織品" }}',
+         '{{ "家電用品" }}',
+         '{{ "電池" }}',
+         '{{ "通訊物品" }}',
+         '{{ "特殊用藥廢容器" }}',
+         '{{ "食用油" }}',
+         '{{ "其他" }}',
+        ],
+        datasets: [{
+            label: '各地區回收量',
+            data: [
+            {% for type in types1 %}
+             '{{ type.紙類 }}',
+             '{{ type.金屬類 }}',
+             '{{ type.塑膠橡膠 }}',
+             '{{ type.玻璃 }}',
+             '{{ type.紡織品 }}',
+             '{{ type.家電用品 }}',
+             '{{ type.電池 }}',
+             '{{ type.通訊物品 }}',
+             '{{ type.特殊用藥廢容器 }}',
+             '{{ type.食用油 }}',
+             '{{ type.其他 }}',
+            {% endfor %} 
+            ],
+            backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(170, 205, 86)',
+                'rgb(22, 206, 86, 1)',
+                'rgb(75, 192, 192, 1)',
+                'rgb(100, 102, 255, 1)',
+                'rgb(130, 159, 64, 1)'
+            ],
+            hoverOffset: 4
+        }]
+    },
+    options: {
+        responsive: false,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+
+<canvas id="myChart2"></canvas>
+<script>
+// <block:setup:1>
+const data = {
+  labels: [
+    'Red',
+    'Blue',
+    'Yellow'
+  ],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [300, 50, 100],
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)'
+    ],
+    hoverOffset: 4
+  }]
+};
+// </block:setup>
+
+// <block:config:0>
+const config = {
+  type: 'doughnut',
+  data: data,
+};
+// </block:config>
+
+module.exports = {
+  actions: [],
+  config: config,
+};
+</script>
+</div>
+{% endblock %}
