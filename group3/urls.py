@@ -30,14 +30,16 @@ from mysite.views import cs
 from mysite.views import drug
 from mysite.views import oil
 from mysite.views import other
-
+from mysite.views import yilan,keelung,taipei,newtaipei,taoyuan,hsinchu,hsinchuc
+from mysite.views import miaoli,taichung,changhua,nantou,yunlin
+from mysite.views import chiayi,chiayic,tainan,kaohsiung,pingtung
+from mysite.views import taitung,hualien,penghu,kinmen,renjiang
 urlpatterns = [
 	path('show<int:id>/', show),
     path('aboutus/',aboutus),
     path('detailed/',detailed),
     path('admin/', admin.site.urls),
     path('rank/',rank),
-
     path('paper/',paper),
     path('metal/',metal),
     path('plastic/',plastic),
@@ -49,6 +51,28 @@ urlpatterns = [
     path('drug/',drug),
     path('oil/',oil),
     path('other/',other),
+    path('yilan/',yilan),
+    path('keelung/',keelung),
+    path('taipei/',taipei),
+    path('newtaipei/',newtaipei),
+    path('taoyuan/',taoyuan),
+    path('hsinchu/',hsinchu),
+    path('hsinchuc/',hsinchuc),
+    path('miaoli/',miaoli),
+    path('taichung/',taichung),
+    path('changhua/',changhua),
+    path('nantou/',nantou),
+    path('yunlin/',yunlin),
+    path('chiayi/',chiayi),
+    path('chiayic/',chiayic),
+    path('tainan/',tainan),
+    path('kaohsiung/',kaohsiung),
+    path('pingtung/',pingtung),
+    path('taitung/',taitung),
+    path('hualien/',hualien),
+    path('penghu/',penghu),
+    path('kinmen/',kinmen),
+    path('renjiang/',renjiang),
     path('chart/',chart),
     path('logout/',logout),
     path('',index),

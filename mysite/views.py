@@ -4,6 +4,10 @@ from django.http import HttpResponse
 from django.contrib import auth
 from mysite.models import Post,Type,Paper,Metal,Plastic,Glass,Textile,Ea,Battery,Cs,Drug,Oil,Other
 from mysite.models import Post,Type
+from mysite.models import Yilan,Keelung,Taipei,Newtaipei,Taoyuan,Hsinchu,Hsinchuc
+from mysite.models import Miaoli,Taichung,Changhua,Nantou,Yunlin
+from mysite.models import Chiayi,Chiayic,Tainan,Kaohsiung,Pingtung
+from mysite.models import Taitung,Hualien,Renjiang,Kinmen,Penghu
 from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
 
 
@@ -102,7 +106,7 @@ def other(request):
 
 def chart(request):
 	types=Type.objects.all()
-	types1=Type.objects.filter(地區="新北市")
+	types1=Type.objects.filter(地區="宜蘭縣")
 	types100=Type.objects.filter(年度="100年")
 	types101=Type.objects.filter(年度="101年")
 	types102=Type.objects.filter(年度="102年")
@@ -115,3 +119,113 @@ def chart(request):
 	types109=Type.objects.filter(年度="109年")
 
 	return render(request, "chart.html", locals())
+
+def yilan(request):
+	types=Type.objects.all()
+	types1=Type.objects.filter(地區="宜蘭縣")
+	return render(request, "Yilan.html", locals())
+
+def keelung(request):
+	types=Type.objects.all()
+	types2=Type.objects.filter(地區="基隆市")
+	return render(request, "keelung.html", locals())
+
+def taipei(request):
+	types=Type.objects.all()
+	types3=Type.objects.filter(地區="臺北市")
+	return render(request, "taipei.html", locals())
+
+def newtaipei(request):
+	types=Type.objects.all()
+	types4=Type.objects.filter(地區="新北市")
+	return render(request, "newtaipei.html", locals())
+
+def taoyuan(request):
+	types=Type.objects.all()
+	types5=Type.objects.filter(地區="桃園市")
+	return render(request, "taoyuan.html", locals())
+
+def hsinchu(request):
+	types=Type.objects.all()
+	types6=Type.objects.filter(地區="新竹市")
+	return render(request, "hsinchu.html", locals())
+
+def hsinchuc(request):
+	types=Type.objects.all()
+	types7=Type.objects.filter(地區="新竹縣")
+	return render(request, "hsinchuc.html", locals())
+
+def miaoli(request):
+	types=Type.objects.all()
+	types8=Type.objects.filter(地區="苗栗縣")
+	return render(request, "miaoli.html", locals())
+
+def taichung(request):
+	types=Type.objects.all()
+	types9=Type.objects.filter(地區="臺中市")
+	return render(request, "taichung.html", locals())
+
+def changhua(request):
+	types=Type.objects.all()
+	types10=Type.objects.filter(地區="彰化縣")
+	return render(request, "changhua.html", locals())
+
+def nantou(request):
+	types=Type.objects.all()
+	types11=Type.objects.filter(地區="南投縣")
+	return render(request, "nantou.html", locals())
+
+def yunlin(request):
+	types=Type.objects.all()
+	types12=Type.objects.filter(地區="雲林縣")
+	return render(request, "yunlin.html", locals())
+
+def chiayi(request):
+	types=Type.objects.all()
+	types13=Type.objects.filter(地區="嘉義市")
+	return render(request, "chiayi.html", locals())
+
+def chiayic(request):
+	types=Type.objects.all()
+	types14=Type.objects.filter(地區="嘉義縣")
+	return render(request, "chiayic.html", locals())
+
+def tainan(request):
+	types=Type.objects.all()
+	types15=Type.objects.filter(地區="臺南市")
+	return render(request, "tainan.html", locals())
+
+def kaohsiung(request):
+	types=Type.objects.all()
+	types16=Type.objects.filter(地區="高雄市")
+	return render(request, "kaohsiung.html", locals())
+
+def pingtung(request):
+	types=Type.objects.all()
+	types17=Type.objects.filter(地區="屏東縣")
+	return render(request, "pingtung.html", locals())
+
+def taitung(request):
+	types=Type.objects.all()
+	types18=Type.objects.filter(地區="臺東縣")
+	return render(request, "taitung.html", locals())
+
+def hualien(request):
+	types=Type.objects.all()
+	types19=Type.objects.filter(地區="花蓮縣")
+	return render(request, "hualien.html", locals())
+
+def penghu(request):
+	types=Type.objects.all()
+	types20=Type.objects.filter(地區="澎湖縣")
+	return render(request, "penghu.html", locals())
+
+def kinmen(request):
+	types=Type.objects.all()
+	types21=Type.objects.filter(地區="金門縣")
+	return render(request, "kinmen.html", locals())
+
+def renjiang(request):
+	types=Type.objects.all()
+	types22=Type.objects.filter(地區="連江縣")
+	return render(request, "renjiang.html", locals())
