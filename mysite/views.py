@@ -61,7 +61,7 @@ def rank(request):
 
 def chart(request):
 	types=Type.objects.all()
-	types1=Type.objects.filter(地區="臺北市",年度="100年")
+	
 	types100=Type.objects.filter(年度="100年")
 	types101=Type.objects.filter(年度="101年")
 	types102=Type.objects.filter(年度="102年")

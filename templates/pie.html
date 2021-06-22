@@ -6,8 +6,14 @@
 <table class='table table-striped table-bordered'>
 
 
-<div><h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;各縣市回收量比例</h1></div>
+<div><h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{% for type in types %}
+{{type.年度}}{{ type.地區 }}
+{% endfor %} 
+
+回收量比例</h1></div>
 <div>
+ <center>   
 <canvas id="myChart1" width="500px" height="500px"></canvas>
 <script>
 var ctx = document.getElementById('myChart1').getContext('2d');
@@ -68,25 +74,299 @@ var myChart1 = new Chart(ctx, {
     }
 });
 </script>
-<footer>
+</center>
+
     <center>
+            <div class="btn-group-vertical">
             <div class="btn-group" role="group" aria-label="Basic example">
-                {% if types.has_previous %}
-                <a href= "?page={{ types.previous_page_number }}" class="btn btn-outline-success "> &nbsp;&nbsp;上一年&nbsp;&nbsp; </a>
-                {% endif %}
-            {% for tpage_number in types.paginator.page_range %}
-            {% ifequal tpage_number types.number %}
-                <a class="btn btn-outline-success">{{tpage_number}}</button>
-            {% else %}
-                <a href= "?page={{ tpage_number }}" class="btn btn-outline-success" >{{ tpage_number }}</a>
-            {% endifequal %}
-            {% endfor %}
-            </label>
-                {% if types.has_next %}
-                <a href= "?page={{ types.next_page_number }}" class="btn btn-outline-success" >&nbsp;&nbsp; 下一年&nbsp;&nbsp; </a>
+
+                <a class="btn btn-outline-success" >﻿100年</a>
+                <a href= "?page=1" class="btn btn-outline-success" >﻿新北市</a>
+                <a href= "?page=2" class="btn btn-outline-success" >臺北市</a>
+                <a href= "?page=3" class="btn btn-outline-success" >桃園市</a>
+                <a href= "?page=4" class="btn btn-outline-success" >臺中市</a>
+                <a href= "?page=5" class="btn btn-outline-success" >臺南市</a>
+                <a href= "?page=6" class="btn btn-outline-success" >高雄市</a>
+                <a href= "?page=7" class="btn btn-outline-success" >宜蘭縣</a>
+                <a href= "?page=8" class="btn btn-outline-success" >新竹縣</a>
+                <a href= "?page=9" class="btn btn-outline-success" >苗栗縣</a>
+                <a href= "?page=10" class="btn btn-outline-success" >彰化縣</a>
+                <a href= "?page=11" class="btn btn-outline-success" >南投縣</a>
+                <a href= "?page=12" class="btn btn-outline-success" >雲林縣</a>
+                <a href= "?page=13" class="btn btn-outline-success" >嘉義縣</a>
+                <a href= "?page=14" class="btn btn-outline-success" >屏東縣</a>
+                <a href= "?page=15" class="btn btn-outline-success" >臺東縣</a>
+                <a href= "?page=16" class="btn btn-outline-success" >花蓮縣</a>
+                <a href= "?page=17" class="btn btn-outline-success" >澎湖縣</a>
+                <a href= "?page=18" class="btn btn-outline-success" >基隆市</a>
+                <a href= "?page=19" class="btn btn-outline-success" >新竹市</a>
+                <a href= "?page=20" class="btn btn-outline-success" >嘉義市</a>
+                <a href= "?page=21" class="btn btn-outline-success" >金門縣</a>
+                <a href= "?page=22" class="btn btn-outline-success" >連江縣</a>
+
+
+               </div>
+               <div class="btn-group" role="group" aria-label="Basic example">
+
+                <a class="btn btn-outline-success" >﻿101年</a>
+                <a href= "?page=23" class="btn btn-outline-success" >﻿新北市</a>
+                <a href= "?page=24" class="btn btn-outline-success" >臺北市</a>
+                <a href= "?page=25" class="btn btn-outline-success" >桃園市</a>
+                <a href= "?page=26" class="btn btn-outline-success" >臺中市</a>
+                <a href= "?page=27" class="btn btn-outline-success" >臺南市</a>
+                <a href= "?page=28" class="btn btn-outline-success" >高雄市</a>
+                <a href= "?page=29" class="btn btn-outline-success" >宜蘭縣</a>
+                <a href= "?page=30" class="btn btn-outline-success" >新竹縣</a>
+                <a href= "?page=31" class="btn btn-outline-success" >苗栗縣</a>
+                <a href= "?page=32" class="btn btn-outline-success" >彰化縣</a>
+                <a href= "?page=33" class="btn btn-outline-success" >南投縣</a>
+                <a href= "?page=34" class="btn btn-outline-success" >雲林縣</a>
+                <a href= "?page=35" class="btn btn-outline-success" >嘉義縣</a>
+                <a href= "?page=36" class="btn btn-outline-success" >屏東縣</a>
+                <a href= "?page=37" class="btn btn-outline-success" >臺東縣</a>
+                <a href= "?page=38" class="btn btn-outline-success" >花蓮縣</a>
+                <a href= "?page=39" class="btn btn-outline-success" >澎湖縣</a>
+                <a href= "?page=40" class="btn btn-outline-success" >基隆市</a>
+                <a href= "?page=41" class="btn btn-outline-success" >新竹市</a>
+                <a href= "?page=42" class="btn btn-outline-success" >嘉義市</a>
+                <a href= "?page=43" class="btn btn-outline-success" >金門縣</a>
+                <a href= "?page=44" class="btn btn-outline-success" >連江縣</a>
                 
-                {% endif %}
-                </div></a></div>
-    </center>
-</footer>
+              
+                </div>
+
+                <div class="btn-group" role="group" aria-label="Basic example">
+                
+                <a class="btn btn-outline-success" >﻿102年</a>
+                <a href= "?page=45" class="btn btn-outline-success" >﻿新北市</a>
+                <a href= "?page=46" class="btn btn-outline-success" >臺北市</a>
+                <a href= "?page=47" class="btn btn-outline-success" >桃園市</a>
+                <a href= "?page=48" class="btn btn-outline-success" >臺中市</a>
+                <a href= "?page=49" class="btn btn-outline-success" >臺南市</a>
+                <a href= "?page=50" class="btn btn-outline-success" >高雄市</a>
+                <a href= "?page=51" class="btn btn-outline-success" >宜蘭縣</a>
+                <a href= "?page=52" class="btn btn-outline-success" >新竹縣</a>
+                <a href= "?page=53" class="btn btn-outline-success" >苗栗縣</a>
+                <a href= "?page=54" class="btn btn-outline-success" >彰化縣</a>
+                <a href= "?page=55" class="btn btn-outline-success" >南投縣</a>
+                <a href= "?page=56" class="btn btn-outline-success" >雲林縣</a>
+                <a href= "?page=57" class="btn btn-outline-success" >嘉義縣</a>
+                <a href= "?page=58" class="btn btn-outline-success" >屏東縣</a>
+                <a href= "?page=59" class="btn btn-outline-success" >臺東縣</a>
+                <a href= "?page=60" class="btn btn-outline-success" >花蓮縣</a>
+                <a href= "?page=61" class="btn btn-outline-success" >澎湖縣</a>
+                <a href= "?page=62" class="btn btn-outline-success" >基隆市</a>
+                <a href= "?page=63" class="btn btn-outline-success" >新竹市</a>
+                <a href= "?page=64" class="btn btn-outline-success" >嘉義市</a>
+                <a href= "?page=65" class="btn btn-outline-success" >金門縣</a>
+                <a href= "?page=66" class="btn btn-outline-success" >連江縣</a>
+                
+              
+                </div>
+
+                <div class="btn-group" role="group" aria-label="Basic example">
+                
+                <a class="btn btn-outline-success" >﻿103年</a>
+                <a href= "?page=67" class="btn btn-outline-success" >﻿新北市</a>
+                <a href= "?page=68" class="btn btn-outline-success" >臺北市</a>
+                <a href= "?page=69" class="btn btn-outline-success" >桃園市</a>
+                <a href= "?page=70" class="btn btn-outline-success" >臺中市</a>
+                <a href= "?page=71" class="btn btn-outline-success" >臺南市</a>
+                <a href= "?page=72" class="btn btn-outline-success" >高雄市</a>
+                <a href= "?page=73" class="btn btn-outline-success" >宜蘭縣</a>
+                <a href= "?page=74" class="btn btn-outline-success" >新竹縣</a>
+                <a href= "?page=75" class="btn btn-outline-success" >苗栗縣</a>
+                <a href= "?page=76" class="btn btn-outline-success" >彰化縣</a>
+                <a href= "?page=77" class="btn btn-outline-success" >南投縣</a>
+                <a href= "?page=78" class="btn btn-outline-success" >雲林縣</a>
+                <a href= "?page=79" class="btn btn-outline-success" >嘉義縣</a>
+                <a href= "?page=80" class="btn btn-outline-success" >屏東縣</a>
+                <a href= "?page=81" class="btn btn-outline-success" >臺東縣</a>
+                <a href= "?page=82" class="btn btn-outline-success" >花蓮縣</a>
+                <a href= "?page=83" class="btn btn-outline-success" >澎湖縣</a>
+                <a href= "?page=84" class="btn btn-outline-success" >基隆市</a>
+                <a href= "?page=85" class="btn btn-outline-success" >新竹市</a>
+                <a href= "?page=86" class="btn btn-outline-success" >嘉義市</a>
+                <a href= "?page=87" class="btn btn-outline-success" >金門縣</a>
+                <a href= "?page=88" class="btn btn-outline-success" >連江縣</a>
+                
+              
+                </div>
+
+                <div class="btn-group" role="group" aria-label="Basic example">
+                
+                <a class="btn btn-outline-success" >﻿104年</a>
+                <a href= "?page=89" class="btn btn-outline-success" >﻿新北市</a>
+                <a href= "?page=90" class="btn btn-outline-success" >臺北市</a>
+                <a href= "?page=91" class="btn btn-outline-success" >桃園市</a>
+                <a href= "?page=92" class="btn btn-outline-success" >臺中市</a>
+                <a href= "?page=93" class="btn btn-outline-success" >臺南市</a>
+                <a href= "?page=94" class="btn btn-outline-success" >高雄市</a>
+                <a href= "?page=95" class="btn btn-outline-success" >宜蘭縣</a>
+                <a href= "?page=96" class="btn btn-outline-success" >新竹縣</a>
+                <a href= "?page=97" class="btn btn-outline-success" >苗栗縣</a>
+                <a href= "?page=98" class="btn btn-outline-success" >彰化縣</a>
+                <a href= "?page=99" class="btn btn-outline-success" >南投縣</a>
+                <a href= "?page=100" class="btn btn-outline-success" >雲林縣</a>
+                <a href= "?page=101" class="btn btn-outline-success" >嘉義縣</a>
+                <a href= "?page=102" class="btn btn-outline-success" >屏東縣</a>
+                <a href= "?page=103" class="btn btn-outline-success" >臺東縣</a>
+                <a href= "?page=104" class="btn btn-outline-success" >花蓮縣</a>
+                <a href= "?page=105" class="btn btn-outline-success" >澎湖縣</a>
+                <a href= "?page=106" class="btn btn-outline-success" >基隆市</a>
+                <a href= "?page=107" class="btn btn-outline-success" >新竹市</a>
+                <a href= "?page=108" class="btn btn-outline-success" >嘉義市</a>
+                <a href= "?page=109" class="btn btn-outline-success" >金門縣</a>
+                <a href= "?page=110" class="btn btn-outline-success" >連江縣</a>
+                
+              
+                </div>
+                <div class="btn-group" role="group" aria-label="Basic example">
+
+                <a class="btn btn-outline-success" >﻿105年</a>
+                <a href= "?page=111" class="btn btn-outline-success" >﻿新北市</a>
+                <a href= "?page=112" class="btn btn-outline-success" >臺北市</a>
+                <a href= "?page=113" class="btn btn-outline-success" >桃園市</a>
+                <a href= "?page=114" class="btn btn-outline-success" >臺中市</a>
+                <a href= "?page=115" class="btn btn-outline-success" >臺南市</a>
+                <a href= "?page=116" class="btn btn-outline-success" >高雄市</a>
+                <a href= "?page=117" class="btn btn-outline-success" >宜蘭縣</a>
+                <a href= "?page=118" class="btn btn-outline-success" >新竹縣</a>
+                <a href= "?page=119" class="btn btn-outline-success" >苗栗縣</a>
+                <a href= "?page=120" class="btn btn-outline-success" >彰化縣</a>
+                <a href= "?page=121" class="btn btn-outline-success" >南投縣</a>
+                <a href= "?page=122" class="btn btn-outline-success" >雲林縣</a>
+                <a href= "?page=123" class="btn btn-outline-success" >嘉義縣</a>
+                <a href= "?page=124" class="btn btn-outline-success" >屏東縣</a>
+                <a href= "?page=125" class="btn btn-outline-success" >臺東縣</a>
+                <a href= "?page=126" class="btn btn-outline-success" >花蓮縣</a>
+                <a href= "?page=127" class="btn btn-outline-success" >澎湖縣</a>
+                <a href= "?page=128" class="btn btn-outline-success" >基隆市</a>
+                <a href= "?page=129" class="btn btn-outline-success" >新竹市</a>
+                <a href= "?page=130" class="btn btn-outline-success" >嘉義市</a>
+                <a href= "?page=131" class="btn btn-outline-success" >金門縣</a>
+                <a href= "?page=132" class="btn btn-outline-success" >連江縣</a>
+
+
+               </div>
+               <div class="btn-group" role="group" aria-label="Basic example">
+
+                <a class="btn btn-outline-success" >﻿106年</a>
+                <a href= "?page=133" class="btn btn-outline-success" >﻿新北市</a>
+                <a href= "?page=134" class="btn btn-outline-success" >臺北市</a>
+                <a href= "?page=135" class="btn btn-outline-success" >桃園市</a>
+                <a href= "?page=136" class="btn btn-outline-success" >臺中市</a>
+                <a href= "?page=137" class="btn btn-outline-success" >臺南市</a>
+                <a href= "?page=138" class="btn btn-outline-success" >高雄市</a>
+                <a href= "?page=139" class="btn btn-outline-success" >宜蘭縣</a>
+                <a href= "?page=140" class="btn btn-outline-success" >新竹縣</a>
+                <a href= "?page=141" class="btn btn-outline-success" >苗栗縣</a>
+                <a href= "?page=142" class="btn btn-outline-success" >彰化縣</a>
+                <a href= "?page=143" class="btn btn-outline-success" >南投縣</a>
+                <a href= "?page=144" class="btn btn-outline-success" >雲林縣</a>
+                <a href= "?page=145" class="btn btn-outline-success" >嘉義縣</a>
+                <a href= "?page=146" class="btn btn-outline-success" >屏東縣</a>
+                <a href= "?page=147" class="btn btn-outline-success" >臺東縣</a>
+                <a href= "?page=148" class="btn btn-outline-success" >花蓮縣</a>
+                <a href= "?page=149" class="btn btn-outline-success" >澎湖縣</a>
+                <a href= "?page=150" class="btn btn-outline-success" >基隆市</a>
+                <a href= "?page=151" class="btn btn-outline-success" >新竹市</a>
+                <a href= "?page=152" class="btn btn-outline-success" >嘉義市</a>
+                <a href= "?page=153" class="btn btn-outline-success" >金門縣</a>
+                <a href= "?page=154" class="btn btn-outline-success" >連江縣</a>
+                
+              
+                </div>
+
+                <div class="btn-group" role="group" aria-label="Basic example">
+                
+                <a class="btn btn-outline-success" >﻿107年</a>
+                <a href= "?page=155" class="btn btn-outline-success" >﻿新北市</a>
+                <a href= "?page=156" class="btn btn-outline-success" >臺北市</a>
+                <a href= "?page=157" class="btn btn-outline-success" >桃園市</a>
+                <a href= "?page=158" class="btn btn-outline-success" >臺中市</a>
+                <a href= "?page=159" class="btn btn-outline-success" >臺南市</a>
+                <a href= "?page=160" class="btn btn-outline-success" >高雄市</a>
+                <a href= "?page=161" class="btn btn-outline-success" >宜蘭縣</a>
+                <a href= "?page=162" class="btn btn-outline-success" >新竹縣</a>
+                <a href= "?page=163" class="btn btn-outline-success" >苗栗縣</a>
+                <a href= "?page=164" class="btn btn-outline-success" >彰化縣</a>
+                <a href= "?page=165" class="btn btn-outline-success" >南投縣</a>
+                <a href= "?page=166" class="btn btn-outline-success" >雲林縣</a>
+                <a href= "?page=167" class="btn btn-outline-success" >嘉義縣</a>
+                <a href= "?page=168" class="btn btn-outline-success" >屏東縣</a>
+                <a href= "?page=169" class="btn btn-outline-success" >臺東縣</a>
+                <a href= "?page=170" class="btn btn-outline-success" >花蓮縣</a>
+                <a href= "?page=171" class="btn btn-outline-success" >澎湖縣</a>
+                <a href= "?page=172" class="btn btn-outline-success" >基隆市</a>
+                <a href= "?page=173" class="btn btn-outline-success" >新竹市</a>
+                <a href= "?page=174" class="btn btn-outline-success" >嘉義市</a>
+                <a href= "?page=175" class="btn btn-outline-success" >金門縣</a>
+                <a href= "?page=176" class="btn btn-outline-success" >連江縣</a>
+                
+              
+                </div>
+
+                <div class="btn-group" role="group" aria-label="Basic example">
+                
+                <a class="btn btn-outline-success" >﻿108年</a>
+                <a href= "?page=177" class="btn btn-outline-success" >﻿新北市</a>
+                <a href= "?page=178" class="btn btn-outline-success" >臺北市</a>
+                <a href= "?page=179" class="btn btn-outline-success" >桃園市</a>
+                <a href= "?page=180" class="btn btn-outline-success" >臺中市</a>
+                <a href= "?page=181" class="btn btn-outline-success" >臺南市</a>
+                <a href= "?page=182" class="btn btn-outline-success" >高雄市</a>
+                <a href= "?page=183" class="btn btn-outline-success" >宜蘭縣</a>
+                <a href= "?page=184" class="btn btn-outline-success" >新竹縣</a>
+                <a href= "?page=185" class="btn btn-outline-success" >苗栗縣</a>
+                <a href= "?page=186" class="btn btn-outline-success" >彰化縣</a>
+                <a href= "?page=187" class="btn btn-outline-success" >南投縣</a>
+                <a href= "?page=188" class="btn btn-outline-success" >雲林縣</a>
+                <a href= "?page=189" class="btn btn-outline-success" >嘉義縣</a>
+                <a href= "?page=190" class="btn btn-outline-success" >屏東縣</a>
+                <a href= "?page=191" class="btn btn-outline-success" >臺東縣</a>
+                <a href= "?page=192" class="btn btn-outline-success" >花蓮縣</a>
+                <a href= "?page=193" class="btn btn-outline-success" >澎湖縣</a>
+                <a href= "?page=194" class="btn btn-outline-success" >基隆市</a>
+                <a href= "?page=195" class="btn btn-outline-success" >新竹市</a>
+                <a href= "?page=196" class="btn btn-outline-success" >嘉義市</a>
+                <a href= "?page=197" class="btn btn-outline-success" >金門縣</a>
+                <a href= "?page=198" class="btn btn-outline-success" >連江縣</a>
+                
+              
+                </div>
+
+                <div class="btn-group" role="group" aria-label="Basic example">
+                
+                <a class="btn btn-outline-success" >﻿109年</a>
+                <a href= "?page=199" class="btn btn-outline-success" >﻿新北市</a>
+                <a href= "?page=200" class="btn btn-outline-success" >臺北市</a>
+                <a href= "?page=201" class="btn btn-outline-success" >桃園市</a>
+                <a href= "?page=202" class="btn btn-outline-success" >臺中市</a>
+                <a href= "?page=203" class="btn btn-outline-success" >臺南市</a>
+                <a href= "?page=204" class="btn btn-outline-success" >高雄市</a>
+                <a href= "?page=205" class="btn btn-outline-success" >宜蘭縣</a>
+                <a href= "?page=206" class="btn btn-outline-success" >新竹縣</a>
+                <a href= "?page=207" class="btn btn-outline-success" >苗栗縣</a>
+                <a href= "?page=208" class="btn btn-outline-success" >彰化縣</a>
+                <a href= "?page=209" class="btn btn-outline-success" >南投縣</a>
+                <a href= "?page=210" class="btn btn-outline-success" >雲林縣</a>
+                <a href= "?page=211" class="btn btn-outline-success" >嘉義縣</a>
+                <a href= "?page=212" class="btn btn-outline-success" >屏東縣</a>
+                <a href= "?page=213" class="btn btn-outline-success" >臺東縣</a>
+                <a href= "?page=214" class="btn btn-outline-success" >花蓮縣</a>
+                <a href= "?page=215" class="btn btn-outline-success" >澎湖縣</a>
+                <a href= "?page=216" class="btn btn-outline-success" >基隆市</a>
+                <a href= "?page=217" class="btn btn-outline-success" >新竹市</a>
+                <a href= "?page=218" class="btn btn-outline-success" >嘉義市</a>
+                <a href= "?page=219" class="btn btn-outline-success" >金門縣</a>
+                <a href= "?page=220" class="btn btn-outline-success" >連江縣</a>
+                
+              
+                </div>
+
+            </a></div></div>
+    </div>
+</center>
+
 {% endblock %}
