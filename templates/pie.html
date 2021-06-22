@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}information{% endblock %}
+{% block headmessage %} <h1>統計</h1> {% endblock %}
+{% block content %}
+<a href="/">come bake to index</a><br>
+<table class='table table-striped table-bordered'>
+
+
+<div><h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;各縣市回收量比例</h1></div>
+<div>
+<canvas id="myChart1" width="500px" height="500px"></canvas>
+<script>
+var ctx = document.getElementById('myChart1').getContext('2d');
+var myChart1 = new Chart(ctx, {
+    type: 'pie',
+
+    data: {
+        labels: [
+        
+         '{{ "紙類" }}',
+         '{{ "金屬類"}}',
+         '{{ "塑膠橡膠" }}',
+         '{{ "玻璃" }}',
+         '{{ "紡織品" }}',
+         '{{ "家電用品" }}',
+         '{{ "電池" }}',
+         '{{ "通訊物品" }}',
+         '{{ "特殊用藥廢容器" }}',
+         '{{ "食用油" }}',
+         '{{ "其他" }}',
+        ],
+        datasets: [{
+            label: '各地區回收量',
+            data: [
+            {% for type in types %}
+             '{{ type.紙類 }}',
+             '{{ type.金屬類 }}',
+             '{{ type.塑膠橡膠 }}',
+             '{{ type.玻璃 }}',
+             '{{ type.紡織品 }}',
+             '{{ type.家電用品 }}',
+             '{{ type.電池 }}',
+             '{{ type.通訊物品 }}',
+             '{{ type.特殊用藥廢容器 }}',
+             '{{ type.食用油 }}',
+             '{{ type.其他 }}',
+            {% endfor %} 
+            ],
+            backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(170, 205, 86)',
+                'rgb(22, 206, 86, 1)',
+                'rgb(75, 192, 192, 1)',
+                'rgb(100, 102, 255, 1)',
+                'rgb(130, 159, 64, 1)'
+            ],
+            hoverOffset: 4
+        }]
+    },
+    options: {
+        responsive: false,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+<footer>
+    <center>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                {% if types.has_previous %}
+                <a href= "?page={{ types.previous_page_number }}" class="btn btn-outline-success "> &nbsp;&nbsp;上一年&nbsp;&nbsp; </a>
+                {% endif %}
+            {% for tpage_number in types.paginator.page_range %}
+            {% ifequal tpage_number types.number %}
+                <a class="btn btn-outline-success">{{tpage_number}}</button>
+            {% else %}
+                <a href= "?page={{ tpage_number }}" class="btn btn-outline-success" >{{ tpage_number }}</a>
+            {% endifequal %}
+            {% endfor %}
+            </label>
+                {% if types.has_next %}
+                <a href= "?page={{ types.next_page_number }}" class="btn btn-outline-success" >&nbsp;&nbsp; 下一年&nbsp;&nbsp; </a>
+                
+                {% endif %}
+                </div></a></div>
+    </center>
+</footer>
+{% endblock %}

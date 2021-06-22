@@ -12,21 +12,85 @@
 
 
 {% block content %}
-<div class="container">
-<table class='table table-triped'>
-  <td>Year</td><td>Area</td><td>Date</td>
-  {% for post in posts %}
-  <tr>
-    <td>{{ post.year }}</td>
-    <td><a href="/show{{post.id}}/">{{ post.title }}</a></td>
-    <td> {{ post.pub_date}}</td>
-      
-  </tr>
+<
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 6"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="6" aria-label="Slide 7"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="7" aria-label="Slide 8"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="8" aria-label="Slide 9"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="9" aria-label="Slide 1"></button>
+  </div>
 
-  {% endfor %}
-</table>
+  <div class="carousel-inner" class= "col-md-4">
+    <div class="carousel-item active" data-bs-interval="2000">
+      <img src="https://i.imgur.com/MM21imm.jpg " width="300" height="410" alt=""; style="display:block; margin:auto;" />
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
 
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="https://i.imgur.com/Hc2ylxm.jpg " width="300" height="410" alt=""; style="display:block; margin:auto;" />
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+
+    <div class="carousel-item"data-bs-interval="2000">
+      <img src="https://i.imgur.com/5t4OoUi.jpg " width="300" height="410" alt=""; style="display:block; margin:auto;" />
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="https://i.imgur.com/TYRlouV.jpg" width="300" height="410" alt=""; style="display:block; margin:auto;" />
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="https://i.imgur.com/JPGDnJ1.jpg " width="300" height="410" alt=""; style="display:block; margin:auto;" />
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="https://i.imgur.com/TIHSzPM.jpg" width="300" height="410" alt=""; style="display:block; margin:auto;" />
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="https://i.imgur.com/lU2HF2m.jpg" width="300" height="410" alt=""; style="display:block; margin:auto;" />
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="https://i.imgur.com/sQwMt0F.jpg" width="300" height="410" alt=""; style="display:block; margin:auto;" />
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="https://i.imgur.com/91scuCs.jpg" width="300" height="410" alt=""; style="display:block; margin:auto;" />
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
-
 {% endblock %}
 

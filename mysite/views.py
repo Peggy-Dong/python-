@@ -59,6 +59,56 @@ def rank(request):
 		types = tpaginator.page(tpaginator.num_pages)
 	return render(request, "rank.html", locals())
 
+def chart(request):
+	types=Type.objects.all()
+	types1=Type.objects.filter(地區="臺北市",年度="100年")
+	types100=Type.objects.filter(年度="100年")
+	types101=Type.objects.filter(年度="101年")
+	types102=Type.objects.filter(年度="102年")
+	types103=Type.objects.filter(年度="103年")
+	types104=Type.objects.filter(年度="104年")
+	types105=Type.objects.filter(年度="105年")
+	types106=Type.objects.filter(年度="106年")
+	types107=Type.objects.filter(年度="107年")
+	types108=Type.objects.filter(年度="108年")
+	types109=Type.objects.filter(年度="109年")
+
+	tpaginator = Paginator(types, 22)
+	tpage = request.GET.get('page')
+	try:
+		types = tpaginator.page(tpage)
+	except PageNotAnInteger: 
+		types = tpaginator.page(1)
+	except EmptyPage:
+		types = tpaginator.page(tpaginator.num_pages)
+
+	return render(request, "chart.html", locals())
+
+def pie(request):
+	types=Type.objects.all()
+	types1=Type.objects.filter(地區="臺北市",年度="100年")
+	types100=Type.objects.filter(年度="100年")
+	types101=Type.objects.filter(年度="101年")
+	types102=Type.objects.filter(年度="102年")
+	types103=Type.objects.filter(年度="103年")
+	types104=Type.objects.filter(年度="104年")
+	types105=Type.objects.filter(年度="105年")
+	types106=Type.objects.filter(年度="106年")
+	types107=Type.objects.filter(年度="107年")
+	types108=Type.objects.filter(年度="108年")
+	types109=Type.objects.filter(年度="109年")
+
+	tpaginator = Paginator(types, 1)
+	tpage = request.GET.get('page')
+	try:
+		types = tpaginator.page(tpage)
+	except PageNotAnInteger: 
+		types = tpaginator.page(1)
+	except EmptyPage:
+		types = tpaginator.page(tpaginator.num_pages)
+
+	return render(request, "pie.html", locals())
+
 def paper(request):
 	papers=Paper.objects.all()
 	return render(request, "paper.html", locals())
@@ -104,26 +154,10 @@ def other(request):
 	others=Other.objects.all()
 	return render(request, "other.html", locals())
 
-def chart(request):
-	types=Type.objects.all()
-	types1=Type.objects.filter(地區="宜蘭縣")
-	types100=Type.objects.filter(年度="100年")
-	types101=Type.objects.filter(年度="101年")
-	types102=Type.objects.filter(年度="102年")
-	types103=Type.objects.filter(年度="103年")
-	types104=Type.objects.filter(年度="104年")
-	types105=Type.objects.filter(年度="105年")
-	types106=Type.objects.filter(年度="106年")
-	types107=Type.objects.filter(年度="107年")
-	types108=Type.objects.filter(年度="108年")
-	types109=Type.objects.filter(年度="109年")
-
-	return render(request, "chart.html", locals())
-
 def yilan(request):
 	types=Type.objects.all()
 	types1=Type.objects.filter(地區="宜蘭縣")
-	return render(request, "Yilan.html", locals())
+	return render(request, "yilan.html", locals())
 
 def keelung(request):
 	types=Type.objects.all()
